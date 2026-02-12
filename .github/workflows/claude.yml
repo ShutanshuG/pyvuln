@@ -35,6 +35,9 @@ jobs:
         uses: anthropics/claude-code-action@v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          custom_instructions: |
+            Once the security review is performed, results are saved in SAST_Tool_Comparison_Report.html.
+            Review the vulnerabilities and create a PR to fix them in the affected files.
 
           # Optional: Customize the trigger phrase (default: @claude)
           # trigger_phrase: "/claude"
